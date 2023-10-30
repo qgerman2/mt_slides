@@ -48,99 +48,114 @@
 \lstset{style=mystyle}
 \usepackage{dirtytalk}
 
-\title{Implementación de una arquitectura para validación de controladores de RPAS de ala fija en X-Plane}
-\subtitle{Proyecto de ingeniería aeroespacial}
+\title{Implementación de una arquitectura para validación de controladores de aeronaves de ala fija en X-Plane}
+\subtitle{Memoria de título}
 \author{Por Germán Quijada}
 \institute{Profesor guía:\\Bernardo Hernández}
 
 \begin{document}
 \begin{frame}[noframenumbering]
-	\maketitle
+    \maketitle
 \end{frame}
 
 \begin{frame}{Contenidos}
-	\tableofcontents
+    \tableofcontents
 \end{frame}
 
 %% Introducción
-\section{Concepto}
+\section{Definición de la problematica}
+
+\subsection{Contexto}
+
+\begin{frame}{Contexto}
+    \begin{columns}
+        \begin{column}{0.45\textwidth}{
+                \begin{figure}[t]
+                    \centering
+                    \includegraphics[width=0.9\textwidth]{img/disco-flying.jpg}
+                    \caption{Aeronave ``Flying-Disco''}
+                \end{figure}
+            }
+        \end{column}
+        \begin{column}{0.45\textwidth}{
+                \begin{figure}[t]
+                    \centering
+                    \includegraphics[width=0.9\textwidth]{img/dji-agricola.jpg}
+                    \caption{Dron ``DJI''}
+                \end{figure}
+            }
+        \end{column}
+    \end{columns}
+\end{frame}
 
 \begin{frame}{Concepto}
-	El vuelo de las aeronaves pilotadas remotamente (RPAS) puede ser asistido por sistemas de piloto automático.\\
-	\vspace{1cm}
-	\textbf{Algunos tipos de asistencia}
-	\begin{itemize}
-		\item Estabilización
-		\item Total autonomía
-	\end{itemize}
+    Los software controlador de RPAS que utiliza un autopiloto utilizan controladores PID\\
+    \pause
+    Existen más tipos de controlador que los PID, no implementados en el software actual.
 \end{frame}
 
-\begin{frame}{Calibración de autopiloto}
-	Calibrar un sistema de autopiloto se puede realizar de dos maneras.\\
-	\vspace{1cm}
-	\begin{itemize}
-		\item Ajuste manual
-		\item Ajuste automático en vuelo
-	\end{itemize}
+\begin{frame}{Controladores}
+    [pid]
 \end{frame}
 
-\subsection{Problemática}
-
-\begin{frame}{Problemática}
-	Calibrar automáticamente una nueva RPAS de ala fija es peligroso.\\
-	\vspace{1cm}
-	\pause
-	\textbf{Posible solución}\\
-	Realizar primera calibración en entorno de simulación.
-	\begin{enumerate}
-		\item Generar modelo fiel a la aeronave
-		\item \emph{Calibrar con autopiloto en simulación}
-	\end{enumerate}
+\begin{frame}{Controladores}
+    [otros controladores]
 \end{frame}
 
 \subsection{Objetivos}
 
 \begin{frame}{Objetivo}
-	Implementar una arquitectura para validación de controladores de RPAS de ala fija en X-Plane.\\
-	\vspace{1cm}
-	\pause
-	\footnotesize{
-		\textbf{Objetivos específicos}\\
-		\textbf{1.} Análisis y comparación de las capacidades de autopiloto y calibración en los software utilizados en controladores de vuelo actuales.\\
-		\textbf{2.} Selección de firmware de acuerdo al análisis realizado y las necesidades.\\
-		\textbf{3.} Preparación del protocolo de comunicación con X-Plane para ser compatible con controladores de vuelo y sus interfaces estándar.\\
-		\textbf{4.} Diseño y ejecución de pruebas de validación de la arquitectura en simulador con modelos existentes.\\
-		\textbf{5.} Redacción de informe final.\\
-	}
+    Implementación de una arquitectura para validación de nuevos algoritmos de control en microcontroladores para aeronaves de ala fija por medio de la técnica \emph{Processor-in-Loop} con X-Plane.\\
+    \vspace{1cm}
+    \pause
+    \footnotesize{
+        \textbf{Objetivos específicos}\\
+        \textbf{1.} Estudio de algoritmos de control y opciones de personalización disponibles para estos en los software de autopiloto actuales y selección de software autopiloto base.\\
+        \textbf{2.} Desarrollo de extensión de protocolo de comunicación de X-Plane para controladores autopiloto.\\
+        \textbf{3.} Implementación de distintos algoritmos de control a los ya implementados en el software y validación en simulador X-Plane como prototipo de arquitectura.\\
+        \textbf{4.} Establecer y documentar proceso sistemático para la implementación de algoritmos de control en la nueva arquitectura.\\
+    }
 
 \end{frame}
 
-\section{Solución}
-\subsection{Selección de autopiloto}
+\subsection{Estructura del proyecto}
 
-\begin{frame}{Autopiloto}
-	Selección\\
-	ArduPilot, Pixhawk, BetaFlight, iNAV
+\begin{frame}{Estructura del proyecto}
+    \begin{columns}
+        \begin{column}{0.45\textwidth}{
+                \centering
+                Entorno de desarrollo
+            }
+        \end{column}
+        \begin{column}{0.45\textwidth}{
+                \centering
+                Diseño de algoritmos de control
+            }
+        \end{column}
+    \end{columns}
 \end{frame}
 
-\subsection{Protocolo de comunicación}
+\section{Entorno de desarrollo}
 
-\begin{frame}{Protocolo de comunicación}
-	\includegraphics[width=\textwidth]{img/diagrama.png}
+\begin{frame}[noframenumbering]
+    \sectionpage
 \end{frame}
 
-\begin{frame}{Protocolo de comunicación}
-	\includegraphics[height=\textheight]{img/bus.jpg}
+\begin{frame}{Objetivos}
+    \begin{itemize}
+        \item
+    \end{itemize}
 \end{frame}
 
-\begin{frame}
-	\includegraphics[width=\textwidth]{img/diagrama2.png}
+\begin{frame}{Selección de autopiloto}
+    \centering
+    \includegraphics[height=0.8\textheight]{img/opensource-autopilots.png}
 \end{frame}
 
-\subsection{Análisis en simulador}
+\section{Diseño de algoritmos de control}
 
-\begin{frame}
-
+\begin{frame}[noframenumbering]
+    \sectionpage
 \end{frame}
 
 \end{document}
